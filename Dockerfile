@@ -33,6 +33,12 @@ COPY etc /etc/
 COPY run.sh /run.sh
 RUN chmod u+rwx /run.sh
 
+# install ibm DB2 driver
+wget https://public.dhe.ibm.com/ibmdl/export/pub/software/data/db2/drivers/odbc_cli/linuxx64_odbc_cli.tar.gz 
+tar -xzf linuxx64_odbc_cli.tar.gz
+cd clidriver/
+
+
 # Calculate download URL
 ENV VERSION 4.7.7
 ENV URL https://files.phpmyadmin.net/phpMyAdmin/${VERSION}/phpMyAdmin-${VERSION}-all-languages.tar.gz
